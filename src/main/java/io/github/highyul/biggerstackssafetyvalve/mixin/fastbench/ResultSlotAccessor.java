@@ -1,4 +1,4 @@
-package io.github.highyul.extendedstackthrottler.mixin.fastbench;
+package io.github.highyul.biggerstackssafetyvalve.mixin.fastbench;
 
 import net.minecraft.world.inventory.ResultSlot;
 import org.spongepowered.asm.mixin.Mixin;

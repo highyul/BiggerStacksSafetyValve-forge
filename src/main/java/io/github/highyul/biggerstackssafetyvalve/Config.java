@@ -1,4 +1,4 @@
-package io.github.highyul.extendedstackthrottler;
+package io.github.highyul.biggerstackssafetyvalve;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
@@ -14,7 +14,7 @@ public class Config {
 
         MAX_CRAFT_COUNT = builder
                 .comment("Maximum number of crafts allowed per shift-click operation.")
-                .defineInRange("maxCraftCount", 8192, 64, Integer.MAX_VALUE);
+                .defineInRange("maxCraftCount", 8192, 4, Integer.MAX_VALUE);
 
         builder.pop();
 

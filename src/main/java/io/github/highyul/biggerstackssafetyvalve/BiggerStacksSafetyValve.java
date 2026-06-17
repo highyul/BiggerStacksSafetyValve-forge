@@ -1,4 +1,4 @@
-package io.github.highyul.extendedstackthrottler;
+package io.github.highyul.biggerstackssafetyvalve;
 
 
 
@@ -7,12 +7,12 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 
-@Mod(ExtendedStackThrottler.MODID)
-public class ExtendedStackThrottler {
+@Mod(BiggerStacksSafetyValve.MODID)
+public class BiggerStacksSafetyValve {
 
-    public static final String MODID = "extendedstackthrottler";
+    public static final String MODID = "biggerstackssafetyvalve";
 
-    public ExtendedStackThrottler(FMLJavaModLoadingContext context) {
+    public BiggerStacksSafetyValve(FMLJavaModLoadingContext context) {
 
         context.registerConfig(
                 ModConfig.Type.COMMON,

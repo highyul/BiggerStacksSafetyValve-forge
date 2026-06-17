@@ -1,8 +1,9 @@
-package io.github.highyul.extendedstackthrottler.mixin.fastbench;
+package io.github.highyul.biggerstackssafetyvalve.mixin.fastbench;
 
 
 import dev.shadowsoffire.fastbench.util.CraftingInventoryExt;
 import dev.shadowsoffire.fastbench.util.FastBenchUtil;
+import io.github.highyul.biggerstackssafetyvalve.util.CraftLimitHelper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
@@ -10,21 +11,9 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Unique;
-
-import static io.github.highyul.extendedstackthrottler.Config.MAX_CRAFT_COUNT;
 
 @Mixin(value = dev.shadowsoffire.fastbench.util.FastBenchUtil.class, remap = false)
-public class FastBenchUtilMixin {
-
-
-
-
-    @Unique
-    private static int extendedstackthrottlermax$Craft() {
-        return MAX_CRAFT_COUNT.get();
-    }
-
+public class MixinFastBenchUtil {
 
 
     /**
@@ -52,7 +41,7 @@ public class FastBenchUtilMixin {
             while(recipe != null && recipe.matches(craftMatrix, player.level())) {
 
                 //Add
-                if (craftLoopCount >= extendedstackthrottlermax$Craft()) {
+                if (craftLoopCount >= CraftLimitHelper.getLimit()) {
                     craftMatrix.checkChanges = true;
                     return ItemStack.EMPTY;
                 }

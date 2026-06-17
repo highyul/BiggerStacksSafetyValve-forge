@@ -92,12 +92,23 @@ dependencies {
     implementation fg.deobf("curse.maven:bigger-stacks-564896:7683469")
     implementation fg.deobf("curse.maven:jei-238222:6600311")
     implementation fg.deobf("curse.maven:spark-361579:4738952")
+    implementation fg.deobf("curse.maven:guideme-1173950:8204776")
+    implementation fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
 
     // Competing MODs / Prerequisite MODs
     implementation fg.deobf("curse.maven:placebo-283644:6274231")
     implementation fg.deobf("curse.maven:fastworkbench-288885:5101229")
 
-
+//    // External mods for testing and compatibility verification
+//    compileOnly fg.deobf("curse.maven:bigger-stacks-564896:7683469")
+//    compileOnly fg.deobf("curse.maven:jei-238222:6600311")
+//    compileOnly fg.deobf("curse.maven:spark-361579:4738952")
+//    compileOnly fg.deobf("curse.maven:guideme-1173950:8204776")
+//    compileOnly fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
+//
+//    // Competing MODs / Prerequisite MODs
+//    compileOnly fg.deobf("curse.maven:placebo-283644:6274231")
+//    compileOnly fg.deobf("curse.maven:fastworkbench-288885:5101229")
 }
 
 
@@ -136,6 +147,6 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 mixin {
-    add sourceSets.main, "craftinglimit.refmap.json"
-    config "craftinglimit.mixins.json"
+    add sourceSets.main, "biggerstackssafetyvalve.refmap.json"
+    config "biggerstackssafetyvalve.mixins.json"
 }
