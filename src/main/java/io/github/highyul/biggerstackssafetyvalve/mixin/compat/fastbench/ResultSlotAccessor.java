@@ -1,10 +1,10 @@
-package io.github.highyul.biggerstackssafetyvalve.mixin.fastbench;
+package io.github.highyul.biggerstackssafetyvalve.mixin.compat.fastbench;
 
 import net.minecraft.world.inventory.ResultSlot;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(ResultSlot.class)
+@Mixin(value = ResultSlot.class, remap = false)
 public interface ResultSlotAccessor {
 
 

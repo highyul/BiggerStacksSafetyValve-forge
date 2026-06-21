@@ -9,12 +9,12 @@
 
   "mixins": [
     "vanilla.MixinAbstractContainerMenu",
-    "fastbench.MixinFastBenchUtil",
-    "fastbench.ResultSlotAccessor",
-    "ae2.MixinAEBaseMenu",
-    "ae2.MixinAppEngSlot",
-    "ae2.MixinCraftingTermSlot",
-    "jei.MixinBasicRecipeTransferHandlerServer"
+    "compat.fastbench.OverwriteMixinFastBenchUtil",
+    "compat.fastbench.ResultSlotAccessor",
+    "compat.ae2.MixinCraftingTermSlot",
+    "compat.jei.OverwriteMixinBasicRecipeTransferHandlerServer",
+    "compat.refinedstorage.MixinCraftingGridBehavior",
+    "compat.toms_storage.MixinCraftingTerminalMenu"
   ],
 
   "client": [],

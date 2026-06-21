@@ -35,6 +35,16 @@ minecraft {
 
     runs {
 
+
+        client {
+            workingDirectory project.file('run')
+
+            jvmArg "-Xmx4G"
+            jvmArg "-Xms4G"
+
+
+        }
+
         configureEach {
             workingDirectory project.file('run')
 
@@ -94,10 +104,13 @@ dependencies {
     implementation fg.deobf("curse.maven:spark-361579:4738952")
     implementation fg.deobf("curse.maven:guideme-1173950:8204776")
     implementation fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
+    implementation fg.deobf("curse.maven:refined-storage-243076:4844585")
+    implementation fg.deobf("curse.maven:toms-storage-378609:6418133")
 
     // Competing MODs / Prerequisite MODs
     implementation fg.deobf("curse.maven:placebo-283644:6274231")
     implementation fg.deobf("curse.maven:fastworkbench-288885:5101229")
+
 
 //    // External mods for testing and compatibility verification
 //    compileOnly fg.deobf("curse.maven:bigger-stacks-564896:7683469")
@@ -105,10 +118,15 @@ dependencies {
 //    compileOnly fg.deobf("curse.maven:spark-361579:4738952")
 //    compileOnly fg.deobf("curse.maven:guideme-1173950:8204776")
 //    compileOnly fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
-//
+//    compileOnly fg.deobf("curse.maven:refined-storage-243076:4844585")
+//    compileOnly fg.deobf("curse.maven:toms-storage-378609:6418133")
+
 //    // Competing MODs / Prerequisite MODs
 //    compileOnly fg.deobf("curse.maven:placebo-283644:6274231")
 //    compileOnly fg.deobf("curse.maven:fastworkbench-288885:5101229")
+
+
+
 }
 
 

@@ -1,4 +1,4 @@
-package io.github.highyul.biggerstackssafetyvalve.mixin.fastbench;
+package io.github.highyul.biggerstackssafetyvalve.mixin.compat.fastbench;
 
 
 import dev.shadowsoffire.fastbench.util.CraftingInventoryExt;
@@ -12,35 +12,40 @@ import net.minecraftforge.event.ForgeEventFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 
+
+@SuppressWarnings("resource")
 @Mixin(value = dev.shadowsoffire.fastbench.util.FastBenchUtil.class, remap = false)
-public class MixinFastBenchUtil {
+public class OverwriteMixinFastBenchUtil {
 
 
     /**
      * @author highyul
      * @reason When the limit is reached, completely halt synchronization with the result container and stop the FastBench (vanilla) call loop
      */
-    @SuppressWarnings({"resource"})
     @Overwrite
-    public static ItemStack handleShiftCraft(Player player, AbstractContainerMenu container, Slot resultSlot, CraftingInventoryExt craftMatrix, ResultContainer craftResult, FastBenchUtil.OutputMover mover) {
+    public static ItemStack handleShiftCraft(Player player,
+                                             AbstractContainerMenu container,
+                                             Slot resultSlot,
+                                             CraftingInventoryExt craftMatrix,
+                                             ResultContainer craftResult,
+                                             FastBenchUtil.OutputMover mover) {
         ItemStack outputCopy = ItemStack.EMPTY;
         if (resultSlot != null && resultSlot.hasItem()) {
             craftMatrix.checkChanges = false;
 
 
-            //Originally: Recipe<CraftingContainer> recipe = craftResult.getRecipeUsed();
+
             @SuppressWarnings("unchecked")
-            Recipe<net.minecraft.world.inventory.CraftingContainer> recipe =
-                    (Recipe<net.minecraft.world.inventory.CraftingContainer>) craftResult.getRecipeUsed();
+            Recipe<CraftingContainer> recipe = (Recipe<CraftingContainer>) craftResult.getRecipeUsed();
 
 
-            //Add
+
             int craftLoopCount = 0;
 
 
             while(recipe != null && recipe.matches(craftMatrix, player.level())) {
 
-                //Add
+
                 if (craftLoopCount >= CraftLimitHelper.getLimit()) {
                     craftMatrix.checkChanges = true;
                     return ItemStack.EMPTY;
@@ -64,7 +69,7 @@ public class MixinFastBenchUtil {
                 }
 
 
-                //Originally: ((ResultSlot)resultSlot).removeCount += outputCopy.getCount();
+
                 ResultSlotAccessor accessor = (ResultSlotAccessor) resultSlot;
                 int currentRemoveCount = accessor.getRemoveCount();
                 accessor.setRemoveCount(currentRemoveCount + outputCopy.getCount());
@@ -76,7 +81,7 @@ public class MixinFastBenchUtil {
             craftMatrix.checkChanges = true;
 
 
-            //Originally: slotChangedCraftingGrid(player.level(), player, craftMatrix, craftResult);
+
             FastBenchUtil.slotChangedCraftingGrid(player.level(), player, craftMatrix, craftResult);
 
 

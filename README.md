@@ -12,6 +12,8 @@ The mod protects the game by applying safe execution limits to crafting-related 
 - BiggerStacks compatible
 - Applied Energistics 2 (AE2) compatible
 - Just Enough Items (JEI) compatible
+- tomsstorage compatible
+- Refined Storage compatible
 
 ---
 
@@ -121,7 +123,8 @@ The goal is to provide a lightweight and reliable protection layer that allows l
 - BiggerStacks対応
 - Applied Energistics 2（AE2）対応
 - Just Enough Items（JEI）対応
-
+- tomsstorage 対応
+- Refined Storage 対応
 ---
 
 ## 💡 開発背景
