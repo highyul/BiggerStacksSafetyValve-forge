@@ -1,5 +1,7 @@
 package io.github.highyul.biggerstackssafetyvalve.util;
 
+import io.github.highyul.biggerstackssafetyvalve.config.RuntimeConfig;
+
 public class CraftLoopCounter {
 
     private int count;
@@ -10,7 +12,9 @@ public class CraftLoopCounter {
             count = 0;
             lastTick = currentTick;
         }
-        if (count >= CraftLimitHelper.getLimit()) {
+
+        int craftingLimits = RuntimeConfig.getCraftingLimits();
+        if (count >= craftingLimits) {
             return false;
         }
         count++;

@@ -1,7 +1,7 @@
 package io.github.highyul.biggerstackssafetyvalve.mixin;
 
-import io.github.highyul.biggerstackssafetyvalve.Config;
-import io.github.highyul.biggerstackssafetyvalve.compat.CompatMod;
+import io.github.highyul.biggerstackssafetyvalve.config.StaticConfig;
+import io.github.highyul.biggerstackssafetyvalve.CompatMod;
 import java.util.function.BooleanSupplier;
 import net.minecraftforge.fml.loading.LoadingModList;
 
@@ -33,7 +33,7 @@ public enum ModConfigTarget {
     }
 
     private static boolean isActive(CompatMod mod) {
-        return isLoaded(mod.id) && Config.isModMixinEnabled(mod.id);
+        return isLoaded(mod.id) && StaticConfig.isModMixinEnabled(mod.id);
     }
 
     private static boolean isLoaded(String modId) {

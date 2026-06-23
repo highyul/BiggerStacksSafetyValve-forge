@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @SuppressWarnings("resource")
-@Mixin(value = AbstractContainerMenu.class, remap = false)
+@Mixin(value = AbstractContainerMenu.class)
 public class MixinAbstractContainerMenu {
 
 

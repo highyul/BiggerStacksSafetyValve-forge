@@ -1,4 +1,4 @@
-package io.github.highyul.biggerstackssafetyvalve.compat;
+package io.github.highyul.biggerstackssafetyvalve;
 
 public enum CompatMod {
     //modID

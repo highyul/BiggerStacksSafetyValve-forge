@@ -1,6 +1,6 @@
-package io.github.highyul.biggerstackssafetyvalve;
+package io.github.highyul.biggerstackssafetyvalve.config;
 
-import io.github.highyul.biggerstackssafetyvalve.compat.CompatMod;
+import io.github.highyul.biggerstackssafetyvalve.CompatMod;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.loading.FMLPaths;
 import com.electronwill.nightconfig.core.file.CommentedFileConfig;
@@ -9,10 +9,9 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Config {
+public class StaticConfig {
 
     public static final ForgeConfigSpec SPEC;
-    public static final ForgeConfigSpec.IntValue MAX_CRAFT_COUNT;
 
 
     private static final Map<String, ForgeConfigSpec.BooleanValue> MOD_MIXIN_SWITCHES = new HashMap<>();
@@ -24,11 +23,6 @@ public class Config {
     static {
         ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
 
-        builder.push("general");
-        MAX_CRAFT_COUNT = builder
-                .comment("Maximum number of crafts allowed per shift-click operation.")
-                .defineInRange("maxCraftCount", 8192, 4, Integer.MAX_VALUE);
-        builder.pop();
 
 
         builder.push("mixin_compatibility");
@@ -59,7 +53,9 @@ public class Config {
         if (isEarlyLoaded) return;
 
 
-        Path configPath = FMLPaths.CONFIGDIR.get().resolve("biggerstackssafetyvalve-common.toml");
+        Path configPath = FMLPaths.CONFIGDIR.get()
+                .resolve("biggerstackssafetyvalve")
+                .resolve("mixin_compat.toml");
 
         try {
             CommentedFileConfig configData = CommentedFileConfig.builder(configPath)

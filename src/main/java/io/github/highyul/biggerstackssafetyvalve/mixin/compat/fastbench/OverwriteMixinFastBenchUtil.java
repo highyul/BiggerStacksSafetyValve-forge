@@ -3,7 +3,7 @@ package io.github.highyul.biggerstackssafetyvalve.mixin.compat.fastbench;
 
 import dev.shadowsoffire.fastbench.util.CraftingInventoryExt;
 import dev.shadowsoffire.fastbench.util.FastBenchUtil;
-import io.github.highyul.biggerstackssafetyvalve.util.CraftLimitHelper;
+import io.github.highyul.biggerstackssafetyvalve.config.RuntimeConfig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.ItemStack;
@@ -46,7 +46,8 @@ public class OverwriteMixinFastBenchUtil {
             while(recipe != null && recipe.matches(craftMatrix, player.level())) {
 
 
-                if (craftLoopCount >= CraftLimitHelper.getLimit()) {
+                int craftingLimits = RuntimeConfig.getCraftingLimits();
+                if (craftLoopCount >= craftingLimits) {
                     craftMatrix.checkChanges = true;
                     return ItemStack.EMPTY;
                 }
