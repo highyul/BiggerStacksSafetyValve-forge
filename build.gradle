@@ -99,18 +99,26 @@ dependencies {
     annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
     // External mods for testing and compatibility verification
+    // Competing MODs / Prerequisite MODs
     implementation fg.deobf("curse.maven:bigger-stacks-564896:7683469")
+
     implementation fg.deobf("curse.maven:jei-238222:6600311")
+
     implementation fg.deobf("curse.maven:spark-361579:4738952")
+
     implementation fg.deobf("curse.maven:guideme-1173950:8204776")
     implementation fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
+
     implementation fg.deobf("curse.maven:refined-storage-243076:4844585")
+
     implementation fg.deobf("curse.maven:toms-storage-378609:6418133")
 
-    // Competing MODs / Prerequisite MODs
     implementation fg.deobf("curse.maven:placebo-283644:6274231")
     implementation fg.deobf("curse.maven:fastworkbench-288885:5101229")
 
+      // Planned to add
+//    implementation fg.deobf("curse.maven:sophisticated-storage-619320:8467484")
+//    implementation fg.deobf("curse.maven:sophisticated-core-618298:8467444")
 
 //    // External mods for testing and compatibility verification
 //    compileOnly fg.deobf("curse.maven:bigger-stacks-564896:7683469")
