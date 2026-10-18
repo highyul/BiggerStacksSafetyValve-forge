@@ -1,0 +1,33 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "io.github.highyul.biggerstackssafetyvalve.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "biggerstackssafetyvalve.refmap.json",
+
+  "plugin": "io.github.highyul.biggerstackssafetyvalve.mixin.BiggerStacksSafetyValveMixinConfig",
+
+  "mixins": [
+    "vanilla.MixinAbstractContainerMenu",
+    "compat.fastbench.OverwriteMixinFastBenchUtil",
+    "compat.fastbench.ResultSlotAccessor",
+    "compat.ae2.MixinCraftingTermSlot",
+    "compat.jei.OverwriteMixinBasicRecipeTransferHandlerServer",
+    "compat.refinedstorage.MixinCraftingGridBehavior",
+    "compat.toms_storage.MixinCraftingTerminalMenu",
+    "compat.sophisticatedcore.MixinCraftingContainerRecipeTransferHandlerServer",
+    "compat.sophisticatedcore.MixinStorageContainerMenuBase"
+  ],
+
+  "client": [],
+
+  "injectors": {
+    "defaultRequire": 1
+  },
+
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
+
+
