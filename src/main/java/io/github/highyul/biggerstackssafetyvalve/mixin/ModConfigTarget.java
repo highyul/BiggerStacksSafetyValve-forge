@@ -12,7 +12,8 @@ public enum ModConfigTarget {
     JEI(CompatMod.JEI, () -> isActive(CompatMod.JEI)),
     REFINED_STORAGE(CompatMod.REFINED_STORAGE, () -> isActive(CompatMod.REFINED_STORAGE)),
     TOMS_STORAGE(CompatMod.TOMS_STORAGE, () -> isActive(CompatMod.TOMS_STORAGE)),
-    SOPHISTICATED_CORE(CompatMod.SOPHISTICATED_CORE, () -> isActive(CompatMod.SOPHISTICATED_CORE));
+    SOPHISTICATED_CORE(CompatMod.SOPHISTICATED_CORE, () -> isActive(CompatMod.SOPHISTICATED_CORE)),
+    AVARITIA(CompatMod.AVARITIA, () -> isActive(CompatMod.AVARITIA));
 
     private final CompatMod mod;
     private final BooleanSupplier condition;

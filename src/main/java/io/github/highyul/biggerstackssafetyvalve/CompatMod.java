@@ -7,7 +7,8 @@ public enum CompatMod {
     JEI("jei"),
     REFINED_STORAGE("refinedstorage"),
     TOMS_STORAGE("toms_storage"),
-    SOPHISTICATED_CORE("sophisticatedcore");
+    SOPHISTICATED_CORE("sophisticatedcore"),
+    AVARITIA("avaritia");
 
     public final String id;
 

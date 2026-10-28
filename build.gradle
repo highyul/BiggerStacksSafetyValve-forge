@@ -121,6 +121,8 @@ dependencies {
     implementation fg.deobf("curse.maven:sophisticated-storage-619320:8467484")
     implementation fg.deobf("curse.maven:sophisticated-core-618298:8467444")
 
+    implementation fg.deobf("curse.maven:re-avaritia-623969:8838608")
+
 //    // External mods for testing and compatibility verification
 //    compileOnly fg.deobf("curse.maven:bigger-stacks-564896:7683469")
 //    compileOnly fg.deobf("curse.maven:jei-238222:6600311")

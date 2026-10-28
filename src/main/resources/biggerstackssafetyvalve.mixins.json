@@ -16,7 +16,8 @@
     "compat.refinedstorage.MixinCraftingGridBehavior",
     "compat.toms_storage.MixinCraftingTerminalMenu",
     "compat.sophisticatedcore.MixinCraftingContainerRecipeTransferHandlerServer",
-    "compat.sophisticatedcore.MixinStorageContainerMenuBase"
+    "compat.sophisticatedcore.MixinStorageContainerMenuBase",
+    "compat.avaritia.MixinTierCraftMenu"
   ],
 
   "client": [],
