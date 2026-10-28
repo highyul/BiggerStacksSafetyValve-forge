@@ -118,8 +118,8 @@ dependencies {
 
 
 
-    implementation fg.deobf("curse.maven:sophisticated-storage-619320:8467484")
-    implementation fg.deobf("curse.maven:sophisticated-core-618298:8467444")
+    implementation fg.deobf("curse.maven:sophisticated-storage-619320:9341479")
+    implementation fg.deobf("curse.maven:sophisticated-core-618298:9341400")
 
     implementation fg.deobf("curse.maven:re-avaritia-623969:8838608")
 
