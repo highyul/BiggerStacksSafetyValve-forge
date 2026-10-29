@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.github.highyul.biggerstackssafetyvalve.util.jei.TransferHelper;
+import io.github.highyul.biggerstackssafetyvalve.compat.jei.TransferHelper;
 import mezz.jei.common.transfer.BasicRecipeTransferHandlerServer;
 import mezz.jei.common.transfer.RecipeTransferUtil;
 import mezz.jei.common.transfer.TransferOperation;

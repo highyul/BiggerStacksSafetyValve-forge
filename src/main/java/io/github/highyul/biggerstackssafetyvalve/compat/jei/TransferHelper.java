@@ -1,4 +1,4 @@
-package io.github.highyul.biggerstackssafetyvalve.util.jei;
+package io.github.highyul.biggerstackssafetyvalve.compat.jei;
 
 import java.util.ArrayList;
 import java.util.List;
