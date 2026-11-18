@@ -123,18 +123,10 @@ dependencies {
 
     implementation fg.deobf("curse.maven:re-avaritia-623969:8838608")
 
-//    // External mods for testing and compatibility verification
-//    compileOnly fg.deobf("curse.maven:bigger-stacks-564896:7683469")
-//    compileOnly fg.deobf("curse.maven:jei-238222:6600311")
-//    compileOnly fg.deobf("curse.maven:spark-361579:4738952")
-//    compileOnly fg.deobf("curse.maven:guideme-1173950:8204776")
-//    compileOnly fg.deobf("curse.maven:applied-energistics-2-223794:7148487")
-//    compileOnly fg.deobf("curse.maven:refined-storage-243076:4844585")
-//    compileOnly fg.deobf("curse.maven:toms-storage-378609:6418133")
+    implementation fg.deobf("curse.maven:alchemical-power-1297854:9393415")
+    implementation fg.deobf("curse.maven:patchouli-306770:7731017")
+    implementation fg.deobf("curse.maven:curios-309927:6418456")
 
-//    // Competing MODs / Prerequisite MODs
-//    compileOnly fg.deobf("curse.maven:placebo-283644:6274231")
-//    compileOnly fg.deobf("curse.maven:fastworkbench-288885:5101229")
 
 
 

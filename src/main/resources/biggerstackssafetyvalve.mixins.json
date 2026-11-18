@@ -17,7 +17,8 @@
     "compat.toms_storage.MixinCraftingTerminalMenu",
     "compat.sophisticatedcore.MixinCraftingContainerRecipeTransferHandlerServer",
     "compat.sophisticatedcore.MixinStorageContainerMenuBase",
-    "compat.avaritia.MixinTierCraftMenu"
+    "compat.avaritia.MixinTierCraftMenu",
+    "compat.alchemical_power.MixinAbstractAlchemicalPowerTablesMenu"
   ],
 
   "client": [],

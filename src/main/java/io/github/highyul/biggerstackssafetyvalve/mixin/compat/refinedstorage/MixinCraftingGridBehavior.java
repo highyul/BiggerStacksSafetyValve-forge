@@ -1,6 +1,5 @@
 package io.github.highyul.biggerstackssafetyvalve.mixin.compat.refinedstorage;
 
-
 import com.refinedmods.refinedstorage.api.network.grid.INetworkAwareGrid;
 import com.refinedmods.refinedstorage.api.util.IComparer;
 import com.refinedmods.refinedstorage.apiimpl.network.grid.CraftingGridBehavior;
@@ -14,13 +13,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @SuppressWarnings("resource")
 @Mixin(value = CraftingGridBehavior.class, remap = false)
-public class MixinCraftingGridBehavior {
-
+public abstract class MixinCraftingGridBehavior {
 
     @Unique
     private final CraftLoopCounter biggerstackssafetyvalve$craftCounter = new CraftLoopCounter();
-
-
 
     @Redirect(
             method = "onCraftedShift",
@@ -29,9 +25,9 @@ public class MixinCraftingGridBehavior {
                     target = "Lcom/refinedmods/refinedstorage/api/util/IComparer;isEqual(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Z"
             )
     )
-    private boolean redirectOnCraftedShift(IComparer comparer, ItemStack stack1, ItemStack stack2,
-                                          INetworkAwareGrid grid, Player player) {
-        if (!biggerstackssafetyvalve$craftCounter.tryIncrementForTick(player.level().getGameTime())) {
+    private boolean biggerstackssafetyvalve$redirectOnCraftedShift(IComparer comparer, ItemStack stack1, ItemStack stack2,
+                                                                   INetworkAwareGrid grid, Player player) {
+        if (!this.biggerstackssafetyvalve$craftCounter.tryIncrementForTick(player.level().getGameTime())) {
             return false;
         }
         return comparer.isEqual(stack1, stack2);

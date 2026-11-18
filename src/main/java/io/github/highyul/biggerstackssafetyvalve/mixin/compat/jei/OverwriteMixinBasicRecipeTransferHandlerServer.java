@@ -1,25 +1,24 @@
 package io.github.highyul.biggerstackssafetyvalve.mixin.compat.jei;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import io.github.highyul.biggerstackssafetyvalve.compat.jei.TransferHelper;
 import mezz.jei.common.transfer.BasicRecipeTransferHandlerServer;
 import mezz.jei.common.transfer.RecipeTransferUtil;
 import mezz.jei.common.transfer.TransferOperation;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Unique;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Mixin(value = BasicRecipeTransferHandlerServer.class, remap = false)
 public abstract class OverwriteMixinBasicRecipeTransferHandlerServer {
@@ -41,8 +40,6 @@ public abstract class OverwriteMixinBasicRecipeTransferHandlerServer {
     private static void stowItems(Player player, List<Slot> inventorySlots, List<ItemStack> itemStacks) {
         throw new AssertionError();
     }
-
-
 
     /**
      * @author highyul
@@ -154,5 +151,4 @@ public abstract class OverwriteMixinBasicRecipeTransferHandlerServer {
         }
         return result;
     }
-
 }

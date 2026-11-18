@@ -13,7 +13,8 @@ public enum ModConfigTarget {
     REFINED_STORAGE(CompatMod.REFINED_STORAGE, () -> isActive(CompatMod.REFINED_STORAGE)),
     TOMS_STORAGE(CompatMod.TOMS_STORAGE, () -> isActive(CompatMod.TOMS_STORAGE)),
     SOPHISTICATED_CORE(CompatMod.SOPHISTICATED_CORE, () -> isActive(CompatMod.SOPHISTICATED_CORE)),
-    AVARITIA(CompatMod.AVARITIA, () -> isActive(CompatMod.AVARITIA));
+    AVARITIA(CompatMod.AVARITIA, () -> isActive(CompatMod.AVARITIA)),
+    ALCHEMICAL_POWER(CompatMod.ALCHEMICAL_POWER, () -> isActive(CompatMod.ALCHEMICAL_POWER));
 
     private final CompatMod mod;
     private final BooleanSupplier condition;

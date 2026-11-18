@@ -10,8 +10,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(value = StorageContainerMenuBase.class, remap = true)
-public class MixinStorageContainerMenuBase {
+@SuppressWarnings("resource")
+@Mixin(StorageContainerMenuBase.class)
+public abstract class MixinStorageContainerMenuBase {
 
     @Unique
     private final CraftLoopCounter biggerstackssafetyvalve$craftCounter = new CraftLoopCounter();
@@ -21,7 +22,7 @@ public class MixinStorageContainerMenuBase {
             at = @At("HEAD"),
             cancellable = true
     )
-    private void onQuickMoveStack(Player player, int slotIndex, CallbackInfoReturnable<ItemStack> cir) {
+    private void biggerstackssafetyvalve$onQuickMoveStackHead(Player player, int slotIndex, CallbackInfoReturnable<ItemStack> cir) {
         if (!this.biggerstackssafetyvalve$craftCounter.tryIncrementForTick(player.level().getGameTime())) {
             cir.setReturnValue(ItemStack.EMPTY);
         }

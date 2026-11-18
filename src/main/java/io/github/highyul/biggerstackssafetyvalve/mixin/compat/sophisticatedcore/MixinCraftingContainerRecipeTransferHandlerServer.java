@@ -14,22 +14,22 @@ import java.util.List;
 import java.util.Map;
 
 @Mixin(value = CraftingContainerRecipeTransferHandlerServer.class, remap = false)
-public class MixinCraftingContainerRecipeTransferHandlerServer {
+public abstract class MixinCraftingContainerRecipeTransferHandlerServer {
 
     @Inject(
             method = "removeItemsFromInventory",
             at = @At("HEAD"),
             cancellable = true
     )
-    private static void biggerstackssafetyvalve$removeItemsFast(
+    private static void biggerstackssafetyvalve$onRemoveItemsFromInventoryHead(
             Player player,
             StorageContainerMenuBase<?> container,
             Map<Integer, ItemStack> required,
             List<Integer> craftingSlots,
             List<Integer> inventorySlots,
             boolean maxTransfer,
-            CallbackInfoReturnable<Map<Integer, ItemStack>> cir) {
-
+            CallbackInfoReturnable<Map<Integer, ItemStack>> cir
+    ) {
         cir.setReturnValue(RecipeTransferRemover.removeItems(
                 player, container, required, craftingSlots, inventorySlots, maxTransfer));
     }

@@ -8,7 +8,8 @@ public enum CompatMod {
     REFINED_STORAGE("refinedstorage"),
     TOMS_STORAGE("toms_storage"),
     SOPHISTICATED_CORE("sophisticatedcore"),
-    AVARITIA("avaritia");
+    AVARITIA("avaritia"),
+    ALCHEMICAL_POWER("alchemical_power");
 
     public final String id;
 
